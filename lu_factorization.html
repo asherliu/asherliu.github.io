@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Hang Liu @ Stevens Institute of Technology 
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/poole.css">
+  <link rel="stylesheet" href="assets/css/syntax.css">
+  <link rel="stylesheet" href="assets/css/hyde.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+</head>
+
+  <body class="theme-base-10">
+        <div class="sidebar">
+            <div class="container sidebar-sticky">
+                <div class="sidebar-about">
+                    <h1 class="name">Hang Liu</h1>
+                    <a href="https://personal.stevens.edu/~hliu77"><img height="180px" src="images/hangliu.jpg" alt="Hang Liu"></a>
+                    <p class="social">
+                    <span class="lead">Assistant Professor of <a href="https://www.stevens.edu/schaefer-school-engineering-science/departments/electrical-computer-engineering">Electrical and Computer Engineering</a> at <a href="https://www.stevens.edu/">Stevens Institute of Technology</a></span><br>
+                    </p>
+                </div>
+                <nav class="sidebar-nav">
+                    <a class="sidebar-nav-item" href="index.html">Home</a>
+
+
+                    <a class="sidebar-nav-item" href="full_pub.html">Publications</a>
+                    <a class="sidebar-nav-item" href="teaching.html">Teaching</a>
+                    <a class="sidebar-nav-item" href="https://github.com/asherliu/researchHOWTO">Research advice</a>
+
+                    <p><strong>Ongoing projects:</strong>
+                    <ul>
+                        <li><a class="sidebar-nav-item" href="subgraph_matching.html">Subgraph matching</a></li>
+                        <li><a class="sidebar-nav-item" href="lu_factorization.html">LU factorization</a></li>
+                        <li><a class="sidebar-nav-item" href="#">Hardware accelerated deep learning [To come]</a></li>
+                        <!-- li><a class="sidebar-nav-item" href="#">5G calibration [To come]</a></li-->
+                    </ul>
+                    </p>
+                    <p><strong>Email: Hang.Liu@stevens.edu</strong></p>
+
+                </nav>
+            </div>
+        </div>
+
+    <div class="content container">
+        <h2 id="recent-publications">Scaling LU Factorization beyond 1,000 GPUs</h2>
+        
+        <img height="150px" src="images/matrix_begin_end_new.png" alt="logo">
+
+    <p><strong>Project Description: </strong>Many scientific and engineering problems require solving large-scale linear systems, Ax = b. Solving this problem with direct methods often involves LU factorization, that is, decomposing the original matrix A into lower and upper triangular matrices L and U, respectively, where A = LU. Since LU decomposition of a sparse matrix typically introduces more
+nonzeros, also referred to as fill-in, than the original matrix A, symbolic factorization is designed to compute the structure of these nonzeros for both L and U. This information is subsequently used to predict the essential memory space for the subsequent numerical factorization. This project aims to develop a scalable symbolic factorization algorithm on GPUs which are absent in current practice.</p>
+
+      <li> Personnel: 
+          <ul>
+              <li>Hang Liu (PI)</li>
+              <li>Xiaoye S. Li (Collaborator)</li>
+              <li>Anil Gaihre (PhD student)</li>
+              <li>Luca Pasquariello (Master student)</li>
+              <li>Zehui Xie (Master student)</li>
+          </ul>
+      </li>
+
+      <li> Publications:
+          <ul>
+              <li>
+                  <a target="_blank" href="https://arxiv.org/pdf/2007.00840.pdf" onclick="ga('send', 'event', 'Downloads', '', 'publication');">GSoFa: Scalable Sparse LU Symbolic Factorization on GPUs</a> <br />
+                  <span class="authorlist"><i>Anil Gaihre</i>, <i>Xiaoye Li</i> and <i><a href="" class="nodec">Hang Liu</a><br /></i></span>
+                  <a target="_blank" href="" class="conf"><b>[Under submission]</b></a>
+              </li>
+              <li>
+                  <a target="_blank" href="docs/champion19.pdf" onclick="ga('send', 'event', 'Downloads', '', 'publication');">H-INDEX: Hash-Indexing for Parallel Triangle  Counting on GPUs</a> <b style="color:green">[Awarded Champion]</b><br />
+                  <span class="authorlist"><i>Santosh Pandey</i>, <i>Xiaoye Li</i>, <i>Aydin Buluc</i>, <i>Jiejun Xu</i> and <i><a href="" class="nodec">Hang Liu</a><br /></i></span>
+                  <a target="_blank" href="" class="conf"><b>GraphChallenge 2019</b></a>
+              </li>
+
+          </ul>
+                <li>Acknowledgement:
+                <ul>
+                    <img height="180px" src="images/lbl.png" alt="logo">
+                </ul>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,127 @@
+body {
+  line-height: 1.3;
+}
+p {
+  margin-bottom: 0.5rem;
+}
+.btn {
+  border: none;
+  text-decoration: none;
+  border-radius: 2px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 1rem;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  vertical-align: middle;
+  background-color: transparent;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-black {
+	color: #343434;
+}
+.btn:focus, .btn:hover {
+	background-color: rgba(0,0,0,0.1);
+}
+.btn:active {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.btn.disabled, btn:disabled {
+  background-color: transparent !important;
+  color: #b3b3b3 !important;
+  cursor: default;
+}
+.btn-outline-primary {
+  text-decoration: none !important;
+}
+a.btn-outline-primary:hover {
+  color: #0275d8;
+}
+a.github-icon:hover, a.github-icon:focus, a.github-icon:active {
+  color: #85d063;
+}
+a.twitter-icon:hover, a.twitter-icon:focus, a.twitter-icon:active{
+  color: #1da0f2;
+}
+a.mail-icon:hover, a.mail-icon:focus, a.mail-icon:active{
+  color: #db4646;
+}
+a.google-icon:hover, a.google-icon:focus, a.google-icon:active{
+  color: #f49c52;
+}
+a.nodec {
+  color: #333333;
+  text-decoration:none
+}
+a.nodec:hover {
+  color:#4582ec;
+}
+.publications {
+  /* list-style: none; 
+  margin: 0;
+  font-size: 18px;
+  */
+  padding-left: 1em;
+}
+.publications li {
+  padding-left: 2px;
+  padding-bottom: 5px;
+  position: relative;
+}
+.authorlist {
+  /*display: block;
+  padding-right: 60px;*/
+}
+.papertitle {
+}
+.conf {
+  /* position: absolute; */
+  /* right: 0px; */
+  padding-right: 0.5rem;
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  vertical-align: middle;
+}
+a.conf {
+  color: #515151;
+}
+.press {
+  padding-bottom: 9px;
+}
+.newslist {
+  list-style: none;
+  padding-left:0;
+}
+.newsitem {
+  overflow:hidden;
+}
+.newsdate {
+  width: 100px;
+  max-width: 100px;
+  float: left;
+  font-style: italic;
+  color: #808080;
+  padding-right: 5px;
+}
+.newscontent {
+  overflow: hidden;
+}
+.newsstar {
+  font-weight: bold;
+  color: green;
+}
+.footer {
+  padding-top: 30px;
+  font-size: 14px;
+  text-align: center;
+}
+.publinkitem {
+  padding: 0 0.5rem;
+}

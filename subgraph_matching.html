@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Hang Liu @ Stevens Institute of Technology 
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/poole.css">
+  <link rel="stylesheet" href="assets/css/syntax.css">
+  <link rel="stylesheet" href="assets/css/hyde.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+</head>
+
+  <body class="theme-base-10">
+        <div class="sidebar">
+            <div class="container sidebar-sticky">
+                <div class="sidebar-about">
+                    <h1 class="name">Hang Liu</h1>
+                    <a href="https://personal.stevens.edu/~hliu77"><img height="180px" src="images/hangliu.jpg" alt="Hang Liu"></a>
+                    <p class="social">
+                    <span class="lead">Assistant Professor of <a href="https://www.stevens.edu/schaefer-school-engineering-science/departments/electrical-computer-engineering">Electrical and Computer Engineering</a> at <a href="https://www.stevens.edu/">Stevens Institute of Technology</a></span><br>
+                    </p>
+                </div>
+                <nav class="sidebar-nav">
+                    <a class="sidebar-nav-item" href="index.html">Home</a>
+
+
+                    <a class="sidebar-nav-item" href="full_pub.html">Publications</a>
+                    <a class="sidebar-nav-item" href="teaching.html">Teaching</a>
+                    <a class="sidebar-nav-item" href="https://github.com/asherliu/researchHOWTO">Research advice</a>
+
+                    <p><strong>Ongoing projects:</strong>
+                    <ul>
+                        <li><a class="sidebar-nav-item" href="subgraph_matching.html">Subgraph matching</a></li>
+                        <li><a class="sidebar-nav-item" href="gsrw.html">Graph sampling and random walk</a></li>
+                        <li><a class="sidebar-nav-item" href="lu_factorization.html">LU factorization</a></li>
+                        <li><a class="sidebar-nav-item" href="#">Hardware accelerated deep learning [To come]</a></li>
+                        <!-- li><a class="sidebar-nav-item" href="#">5G calibration [To come]</a></li-->
+                    </ul>
+                    </p>
+                    <p><strong>Email: Hang.Liu@stevens.edu</strong></p>
+
+                </nav>
+            </div>
+        </div>
+
+    <div class="content container">
+        <h2 id="recent-publications"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2000722">CRII: Expediting Subgraph Matching on GPUs</a></h2>
+
+    <p><strong>Project Description: </strong>We are living in an increasingly connected world, where the Big Data movement has resulted in not only more data but, more importantly, more connected data, such as, social networks, knowledge graphs and deep neural networks. Sub-graph isomorphism, which finds sub-graphs of interest from an enormous data graph, is a fundamental tool for an array of critical applications, e.g., cyber-security, criminal detection and health care. In spite of such a great potential, identifying all isomorphic sub-graphs is a challenge in the Big Data context due to high computation complexity and memory consumption. This project addresses this issue, and will benefit both industrial and academic communities, as well as train undergraduate, underrepresented and STEM high school students for high-performance data analytics (HPDA) research.</p>
+
+      <p>Conventional efforts split the query graph into two disjoint parts for prune and join, which impairs the prune strength of the query graph and results in a large volume of unpromising candidates for the 'join' phase. This project advocates an entire query graph-based prune approach to resolve the computation and memory challenge. In particular, this research consists of two parts: 1) algorithms research -- provenance-aware intersection-based candidate construction -- will greatly reduce the false positives faced by the conventional approaches; 2) systems research, i.e., GPU-enabled massively parallel provenance group intersection, will tackle the bottleneck that is encountered on conventional CPU platforms, through use of Graph Processing Unit (GPU) acceleration.</p>
+
+      <li> Personnel: 
+          <ul>
+              <li>Hang Liu (PI)</li>
+              <li>Santosh Pandey (PhD student)</li>
+              <li>Pridhvi Myneni (Undergrad)</li>
+          </ul>
+      </li>
+
+      <li> Publications:
+          <ul>
+              <li>
+                  <a target="_blank" href="docs/vldb20.pdf" onclick="ga('send', 'event', 'Downloads', '', 'publication');">PM-LSH: A Fast and Accurate LSH Framework for High-Dimensional Approximate NN Search</a> <br />
+                  <span class="authorlist"><i><a href="" class="nodec">Bolong Zheng</a></i>, <i>Xi Zhao</i>, <i>Lianggui Weng</i>, <i>Nguyen Quoc Viet Hung</i>, <i>Hang Liu</i> and <i>Christian S. Jensen<br/></i></span>
+                  <a target="_blank" href="" class="conf"><b>VLDB 2020</b></a>
+              </li>
+              <li>
+                  <a target="_blank" href="docs/ppopp20.pdf" onclick="ga('send', 'event', 'Downloads', '', 'publication');">ELDA: Efficient LDA on GPUs (short paper)</a> <br />
+                  <span class="authorlist"><i><a href="" class="nodec">Shilong Wang</a></i>, <i>Da Li</i>, <i>Hengyong Yu</i> and <i><a href="" class="nodec">Hang Liu</a><br /></i></span>
+                  <a target="_blank" href="" class="conf"><b>PPoPP 2020</b></a>
+              </li>
+              <li>
+                  <a target="_blank" href="https://github.com/asherliu/researchHOWTO" onclick="ga('send', 'event', 'Downloads', '', 'publication');">Actionable Guidance for Fresh HPC Researchers</a> <br />
+                  <span class="authorlist"><i><a href="" class="nodec">Hang Liu</a></i> and <i><a href="" class="nodec">Chunhua Liao</a><br /></i></span>
+                  <a target="_blank" href="" class="conf"><b>eduHPC@SC '19</b></a>
+              </li>
+              <li>
+                  <a target="_blank" href="docs/champion19.pdf" onclick="ga('send', 'event', 'Downloads', '', 'publication');">H-INDEX: Hash-Indexing for Parallel Triangle  Counting on GPUs</a> <b style="color:green">[Awarded Champion]</b><br />
+                  <span class="authorlist"><i><a href="" class="nodec">Santosh Pandey</a></i>, <i>Xiaoye Li</i>, <i>Aydin Buluc</i>, <i>Jiejun Xu</i> and <i><a href="" class="nodec">Hang Liu</a><br /></i></span>
+                  <a target="_blank" href="" class="conf"><b>GraphChallenge 2019</b></a>
+              </li>
+              <li>
+                  <a target="_blank" href="docs/sc19.pdf" onclick="ga('send', 'event', 'Downloads', '', 'publication');">An Efficient Parallel Algorithm for Dominator Detection (ACM Undergraduate Poster Competition)</a> <br />
+                  <span class="authorlist"><i><a href="" class="nodec">Daniel Giger</a></i> and <i><a href="" class="nodec">Hang Liu</a><br /></i></span>
+                  <a target="_blank" href="" class="conf"><b>SC 2019</b></a>
+              </li>
+              <li>
+                  <a target="_blank" href="docs/hpdc19.pdf" onclick="ga('send', 'event', 'Downloads', '', 'publication');">XBFS: eXploring Dynamic Optimizations for Breadth-First Search on GPUs</a><br />
+                  <span class="authorlist"><i><a href="" class="nodec">Anil Gaihre</a></i>, <i>Zhenlin Wu</i>, <i>Fan Yao</i> and <i><a href="" class="nodec">Hang Liu</a><br /></i></span>
+                  <a target="_blank" href="" class="conf"><b>HPDC 2019</b></a>
+              </li>
+              <li>
+                  <a target="_blank" href="docs/sigmod19.pdf" onclick="ga('send', 'event', 'Downloads', '', 'publication');">CECI: Compact Embedding Cluster Indexfor Scalable Subgraph Matching</a><br />
+                  <span class="authorlist"><i><a href="" class="nodec">Bibek Bhattarai</i>, <i>Hang Liu</i> and <i><a href="" class="nodec">H. Howie Huang</a><br /></i></span>
+                  <a target="_blank" href="" class="conf"><b>SIGMOD 2019</b></a>
+              </li>
+
+          </ul>
+                <li>Acknowledgement:
+                <ul>
+                    <a href=https://www.nsf.gov/awardsearch/showAward?AWD_ID=2000722><img height="180px" src="images/nsf.jpg" alt="logo"></a>
+                </ul>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Hang Liu @ Stevens Institute of Technology 
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/poole.css">
+  <link rel="stylesheet" href="assets/css/syntax.css">
+  <link rel="stylesheet" href="assets/css/hyde.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+</head>
+
+  <body class="theme-base-10">
+        <div class="sidebar">
+            <div class="container sidebar-sticky">
+                <div class="sidebar-about">
+                    <h1 class="name">Hang Liu</h1>
+                    <a href="https://personal.stevens.edu/~hliu77"><img height="180px" src="images/hangliu.jpg" alt="Hang Liu"></a>
+                    <p class="social">
+                    <span class="lead">Assistant Professor of <a href="https://www.stevens.edu/schaefer-school-engineering-science/departments/electrical-computer-engineering">Electrical and Computer Engineering</a> at <a href="https://www.stevens.edu/">Stevens Institute of Technology</a></span><br>
+                    </p>
+                </div>
+                <nav class="sidebar-nav">
+                    <a class="sidebar-nav-item" href="index.html">Home</a>
+
+
+                    <a class="sidebar-nav-item" href="full_pub.html">Publications</a>
+                    <a class="sidebar-nav-item" href="teaching.html">Teaching</a>
+                    <a class="sidebar-nav-item" href="https://github.com/asherliu/researchHOWTO">Research advice</a>
+
+                    <p><strong>Ongoing projects:</strong>
+                    <ul>
+                        <li><a class="sidebar-nav-item" href="subgraph_matching.html">Subgraph matching</a></li>
+                        <li><a class="sidebar-nav-item" href="lu_factorization.html">LU factorization</a></li>
+                        <li><a class="sidebar-nav-item" href="#">Hardware accelerated deep learning [To come]</a></li>
+                        <!-- li><a class="sidebar-nav-item" href="#">5G calibration [To come]</a></li-->
+                    </ul>
+                    </p>
+                    <p><strong>Email: Hang.Liu@stevens.edu</strong></p>
+
+                </nav>
+            </div>
+        </div>
+
+    <div class="content container">
+        <h2 id="recent-publications">Re-thinking Transformer Models on FPGAs: A Self-Attention Centric, Algorithm and Hardware Co-designed Approach</h2>
+        
+        <!--img height="150px" src="images/matrix_begin_end_new.png" alt="logo"-->
+
+    <p><strong>Project Description: </strong>Over the past decade, the big ideas nurtured by deep learning have reinvented the way technology is built for almost any application one can think of. 
+Among all mainstream deep learning models, e.g., Convolutional Neural Network (CNN) and Recurrent Neural Network (RNN), Transformer models are considered as one of the most important deep learning models since 2018, in part because it could potentially replace all existing deep neural networks (DNNs).
+Despite that Transformer-based models making remarkable triumphs, their significant model size is a widely recognized roadblock that concerns real-world applications. 
+Such a large model size, together with inefficient general-purpose computing platforms, such as Graphics Processing Units (GPUs) and Central Processing Units (CPUs), often leads to a prolonged turnaround time and high energy cost for transformer-based models.</p>
+
+    <p>
+Traditional Transformer-based projects often directly adopt the primitives or resolutions designed for existing deep learning models, i.e., CNN, to implement transformer models, such as weight pruning, and quantization. While such attempts are productive, they often fail to achieve desirable performance due to the mismatch between the traditional primitives and the {unique architecture and computation workflows of transformer models}. In this project, we believe that transformers should have dedicated algorithm designs. Considering better pipeline scheduling, energy efficiency and development cycle, FPGAs lend themselves as the top platform to support our ``self-attention-centric'' transformer designs.</p>
+
+      <li> Personnel: 
+          <ul>
+              <li>Hang Liu (PI)</li>
+              <li>Caiwen Ding (Collaborator)</li>
+              <li>Scott Weitze (PhD student)</li>
+              <li>Grant Simmons (Undergraduate student)</li>
+          </ul>
+      </li>
+
+      <li> Publications:
+          <ul>
+              <li>
+                  <a target="_blank" href="" onclick="ga('send', 'event', 'Downloads', '', 'publication');">Ftrans: Energy-Efficient Acceleration of Transformers using FPGAs</a> <br />
+                  <span class="authorlist"><li>Bingbing Li, Santosh Pandey, Haowen Fang, Yanjun Lyv, Ji Li, Jieyang Chen, Mimi Xie, Lipeng Wan, Hang Liu, Caiwen Ding</li></span>
+                  <a target="_blank" href="" class="conf"><b>ISPLED '20</b></a>
+              </li>
+              <li>
+                  <a target="_blank" href="" onclick="ga('send', 'event', 'Downloads', '', 'publication');">SuperNeurons: FFT-based Gradient Sparsification in the Distributed Training of Deep Neural Networks</a> <br />
+                  <span class="authorlist"><li>Linnan Wang, Wei Wu, Junyu Zhang, Hang Liu, George Bosilca, Maurice Herlihy, Rodrigo Fonseca</li></span>
+                  <a target="_blank" href="" class="conf"><b>HPDC '19</b></a>
+              </li>
+          </ul>
+    </div>
+  </body>
+</html>
+
