@@ -1,0 +1,106 @@
+<h2 id="recent-publications">Details on 9 papers for tenure promotion - Hang Liu</h2>
+
+They are not (necessarily) my highest-cited work, given that several of them were just published recently. However, they collectively demonstrate the depth and breadth of my research portfolio. And I personally think these papers are interesting.
+
+I will explain all the papers in three stages: Identifying the critical applications, introducing key algorithmic innovations, and designing and implementing systems. Of note, identifying a critical problem that is interesting, challenging, and can eventually be solved by a student is sometimes even more important than the subsequent papers. 
+
+<b style="color:blue">Pandey, Santosh, Lingda Li, Adolfy Hoisie, Xiaoye S. Li, and Hang Liu*. "C-SAW: A framework for graph sampling and random walk on GPUs." In SC20: International Conference for High Performance Computing, Networking, Storage and Analysis, pp. 1-15. IEEE, 2020.</b>
+
+Hang Liu is the corresponding author. My student Santosh Pandey is the first author.
+
+I chose this paper to represent our "algorithm-and-system codesigned approach for critical applications" research philosophy. This is the first work that unites all major random walk and graph sampling algorithms behind a common framework through our "bias-centric interface". 
+
+We started this project with a focus on accelerating GNNs in the summer of 2019 at Lawrence Berkeley National Laboratory in part because graph learning was extremely popular. However, we find scaling GNNs to HPC infrastructure for large graphs would spend more than 80% of the time on sampling graphs. 
+
+I made a conscious decision to change our target to accelerate the sampling method that is used by GNNs. Further, we decided to develop a MapReduce-style system that can support all graph algorithms that requires sampling. And we found more than 10 applications for graph sampling and random walks. All of them use Monte Carlo sampling methods which contain 3 algorithms.
+
+As the first work for this effort, we spent almost half of the introduction justifying the necessity of this framework: (1) First, although there is a variety of frameworks to accelerate traditional graph processing algorithms on GPUs, graph sampling and random walk pose unique challenges thus cannot use existing graph frameworks. (2) it is difficult to arrive at a GPU-based framework for various graph sampling and random walk algorithms that address the needs of vastly different applications. And (3) an extremely large graph, which drives the needs of graph sampling and random walk, usually goes beyond the size of GPU memory.
+
+In this work, we propose (1) a bias-centric framework that allows end users to express a large family of sampling and random walk algorithms with ease. (2) We implement efficient GPU sampling with novel techniques. Our techniques parallelize the vertex selection on GPUs with efficient algorithm and system optimizations for vertex collision migration. (3) We propose asynchronous designs for sampling and random walk, which optimizes the data transfer efficiency for graphs that exceed the GPU memory capacity. We further scale C-SAW to multiple GPUs. 
+
+We have released this code on GitHub and it is starred and forked by 40 times. The citation is 31 since publication in 2020.
+
+Huan, Chengying, Shuaiwen Leon Song, Santosh Pandey, Hang Liu, Yongchao Liu, Baptiste Lepers, Changhua He, Kang Chen, Jinlei Jiang, and Yongwei Wu. "TEA: A General-Purpose Temporal Graph Random Walk Engine." Eurosys (2023).
+
+Santosh Pandey is my student. Hang Liu and Yongwei Wu are co-corresponding authors. I developed the ideas with Chengying Huan and Santosh Pandey. I wrote the entire paper. 
+
+TEA (this paper) is one of my favorite algorithmic innovation papers! It is faster than the existing random walk system by around 1,000x. 
+
+TEA targets random walk on temporal graphs. Basically, we assume the sampling space will change with respect to different incoming edges. Therefore, existing Monte Carlo sampling methods will experience remarkable challenges: (1) the rejection sampling method faces an extremely large number of trials when applied to temporal graphs. (2) Inverse Transform Sample (ITS) method always experiences O(log(D)) time complexity, which is nontrivial. (3) for the alias method, one would have to build one version of the alias table for each unique time step t, which will inundate limited memory space.
+
+TEA introduces the persistent alias table approach, which pre-builds the log(N) a number of alias tables and uses them to formulate required alias tables of any time t. During sampling, we use ITS and the alias method together to derive the edge of interest rapidly. Further, we introduce a hierarchical persistent alias table to take advantage of fast memory hierarchies. We also introduce an auxiliary index to assist rapid alias table construction. Finally, we implement this method on distributed and external memory settings and demonstrate superior performance. And this trend climbs when the graph increases. 
+
+
+Chen, Shiyang, Da Zheng, Caiwen Ding, Yuede Ji, Chengying Huan, and Hang Liu. "Tango: re-thinking quantization for graph neural network training on GPUs." In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis, pp. 1-18. 2023.
+
+Shiyang is my student. Hang Liu is the corresponding author.
+
+This paper is my favorite hardcore system innovation paper thus far. It could be the first paper that makes quantized GNN training faster yet remains accurate with potential impacts on typical DNN models. 
+
+Existing work often uses quantization to save memory. When it comes to computation, they dequantize the values and perform the computation in full precision for two reasons: (1) It is very hard to maintain accuracy when we directly compute the quantized values. (2) If we quantize the tensors in one kernel and perform the subsequent tensor computations in another kernel, it is often longer than directly using high-performance cuBLAS or cuSPARSE primitives to compute in the full precision mode.
+
+For accuracy concerns, Tango introduces a rule that determines what tensor operations can be performed in limited precision and leave the remaining ones in full precision. We also introduce an approach to deriving the appropriate quantization bits with limited overhead. We made sure that the quantized kernels could yield the maximal turnaround time reductions. For turnaround time reduction, quantization offers two avenues: (1) for computation-intensive operations like GEMM, we introduce GEMM computation with on-the-fly quantization. We carefully design a pipelined GPU kernel that can reach a similar performance as cuBLAS. Further, with quantization, we can achieve around 3x speedup. (2) For memory-intensive operations, such as SPMM and SDDMM, we introduce an on-the-fly dequantization design. That is, we quantize the tensors in a sequential manner. Afterward, the computations, which randomly access the tensors and require the tensors to be full precision, we randomly access the quantized smaller tensor and on-the-fly dequantize them for computations. This yields up to 5.5x speedup.
+
+
+Chen, Shiyang, Shaoyi Huang, Santosh Pandey, Bingbing Li, Guang R. Gao, Long Zheng, Caiwen Ding, and Hang Liu. "E.T.: re-thinking self-attention for transformer models on GPUs." In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis, pp. 1-18. 2021.
+
+Shiyang is my student. Hang Liu is the corresponding author. 
+
+This is the first major paper led by my group on HPC for machine learning. It introduces self-attention-specific operators for transformer models and tensor-core-aware pruning strategies. 
+
+Existing transformer systems face two problems: (1) Transformer models and their variants, such as Large Language Models (LLMs), are extremely large. (2) Existing transformer systems implement transformers with cuBLAS matrix primitives. 
+
+This paper introduces three contributions to reducing the turnaround time for transformer models: (1) First, we introduce a novel self-attention architecture, which encompasses two tailored self-attention operators with corresponding sequence length-aware optimizations and operation reordering optimizations. (2) We propose an attention-aware and tensor core-friendly pruning design which judiciously uses various pruning algorithms to reduce more computations hence achieving a significantly shorter turnaround time. (3) We demonstrate the effectiveness of E.T. across a wide range of benchmarks and models. To the best of our knowledge, E.T. is the first work that achieves as short inference latencies as 1,131 𝜇𝑠 (BERT BASE) and 500 𝜇𝑠 (DistilBERT) on GPUs while maintaining high prediction accuracy. 
+
+Gaihre, Anil, Da Zheng, Scott Weitze, Lingda Li, Shuaiwen Leon Song, Caiwen Ding, Xiaoye S. Li, and Hang Liu. "Dr. Top-k: delegate-centric Top-k on GPUs." In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis, pp. 1-14. 2021.
+
+Anil is my student. Hang Liu is the corresponding author.
+
+This paper is similar to C-SAW. We started by improving the gradient sparsification project in our HPDC '20 paper. Later, we find computing top-k values from a large random vector by itself is a critical problem for many applications in the database, machine learning, and data mining community. Therefore, we shift our focus to purely working on top-k computations. 
+
+Traditional top-k efforts rely on a heap to extract the k values of interest. However, this solution will suffer from enormous contentions on GPUs that offer millions of threads. Therefore, recent efforts use sorting or its variants to extract top-k on GPUs. For example, there is bitonic top-k, radix top-k, and bucket top-k. Unfortunately, these algorithms are either unstable (i.e., require nearly the time of sorting the entire array to extract top-k in the worst case) or suffer from limited workload reduction from sorting (i.e., bitonic top-k). 
+					
+Dr. top-k introduces a comprehensive delegate-centric design, which includes maximum delegate, top-𝑘 delegate-based filtering, and 𝛽 delegate mechanisms to help reduce the workload for top-𝑘 up to more than 99%. Specifically, we (i) partition the input vector into a collection of subranges and extract the maximum delegate from each subrange to construct a delegate vector, and (ii) perform top-𝑘 on the delegate vector. Since only those subranges whose maximum delegates belong to the top-𝑘 of the delegate vector can contribute to the top-𝑘 for the input vector, we further (iii) concatenate those qualified subranges to construct a concatenated vector, and (iv) perform top-𝑘 on the concatenated vector. To further reduce the workload for step (iv), we use the minimum of the top-𝑘 of the delegate vector to filter out smaller elements from the qualified subranges. Not limited there, we extend the maximum delegate to 𝛽 delegate to reduce the workload for concatenation and second top-𝑘. In particular, we will extract the top 𝛽 delegates, instead of merely the maximum, from each subrange. Afterward, we introduce a new rule using which we only concatenate subranges whose entire 𝛽 delegates are taken. Further, we deduce the optimal subrange size with both theoreti- cal soundness and experimental validation. We observe that Dr. top-k can be orders of magnitude faster than existing solutions. 
+				
+Pandey, Santosh, Lingda Li, Thomas Flynn, Adolfy Hoisie, and Hang Liu. "Scalable deep learning-based microarchitecture simulation on GPUs." In 2022 SC22: International Conference for High Performance Computing, Networking, Storage and Analysis (SC), pp. 1138-1152. IEEE Computer Society, 2022.
+
+Santosh is my student. Hang Liu is the corresponding author. 
+
+As an interesting memory note, Santosh and I are on a subcontract with Brookhaven to finish the prior SimNet paper. This SC '22 paper is like side work. In order to wrap this SC ‘22 paper up, Santosh and I did not take any weekend break from the fall of 2021 until the deadline of SC ‘22, including the Christmas and New Year holidays.  
+
+This is my favorite paper in the machine learning direction of my group thus far because how fast this paper could accelerate SimNet decides whether SimNet could succeed. This paper manages to deliver! We accelerate SimNet by around 1 million times! And this is 2796x faster than gem5.  
+
+The contributions of this paper are as follows: (1) We find the native SimNet design contains four redundant data copies in order to build the relational CNN inputs. And we remove all such redundancies! (2) Based on the physical limitations of the given contexts, we partition the instruction sequence into parallel chunks. Subsequently, we use warming up and post-error correction to nearly remove the errors caused by partitioning the instructions. These two contributions together enable a scalable deep learning-based detailed simulation. (3) We also extend this idea to Ithemal [ICML ‘19] and make that simulator scalable.
+
+Gaihre, Anil, Zhenlin Wu, Fan Yao, and Hang Liu. "XBFS: eXploring runtime optimizations for breadth-first search on GPUs." In Proceedings of the 28th International symposium on high-performance parallel and distributed computing, pp. 121-131. 2019.
+
+Anil and Zhenlin are my students. Hang Liu is the corresponding author. 
+
+This is the first truly asynchronous breadth-first search paper. Specifically, in bottom-up BFS, which consumes the majority of the time in BFS, XBFS can traverse multiple BFS levels in one iteration. In bottom-up BFS, each unvisited vertex will check its neighbors to see if any of its neighbors are already visited in the preceding level. If so, this vertex will mark itself as visited at the current level. We push this algorithm further as follows: we let each unvisited check its neighbors, and as long as it has a neighbor visited (regardless of the preceding or current, or next level), we will mark this unvisited vertex as visited. And its level will be the visited neighbor's level + 1. This allows us to visit vertices of multiple levels in a single round. 
+
+The second interesting observation is that: recent GPUs are better and better at atomic operations. Therefore, we introduce dynamic strategies to generate frontier queues and balance the workload. These approaches are much better than the prior static ones. 
+
+Liu, Hang, and H. Howie Huang. "Simd-x: Programming and processing of graph algorithms on GPUs." In Proceedings of the 2019 USENIX Conference on Usenix Annual Technical Conference. 2019.
+
+This paper is the concluding work for most of my philosophical thoughts in GPU-accelerated traditional graph analytics.  
+
+In this work, we try to answer one question: what is the best programming interface for GPU-based framework to achieve ease of programming and turnaround time optimizations together?
+
+Graph programming converges to either vertex-centric or edge-centric models. In particular, the vertex-centric model contains two functions: vertex scatter defines what operations should be done on this vertex, and vertex gathers and applies the updates on the vertex. This model has been adopted by a number of existing projects, e.g., Pregel, GraphLab, PowerGraph, GraphChi, FlashGraph, Mosaic, and GridGraph, as well as GPU-based implementations such as CuSha and Gunrock. On the other hand, the edge-centric model is initially introduced by the external-memory graph engine X-stream to improve IO performance. It requires a programmer to define two functions needed on each edge, edge scatter, and edge gather. As such, this model schedules threads by the edge count. Particularly, one thread needs to send the information of the source vertex and the outbound edge to the destination vertex (edge scatter), which atomically applies the new updates in edge gather.
+					
+I believe that the many-threaded nature of GPU architecture demands a new abstraction. We intend to exploit various thread scheduling options to better tackle workload imbalance while minimizing the overhead with regard to atomic operations on GPUs. To avoid wasting the threads to compute on inactive vertices, task filtering is essential in generating a list of active vertices. Once task lists are ready, workload imbalance caused by skewed degree distribution in many graphs becomes the next concern. Since handling this issue in a vertex-centric model involves nontrivial programming efforts, edge-based computing presents a desirable alternative. However, the traditional edge-centric approach would result in atomic updates at the destination vertex. Thus a proper schedule before applying the update is essential to avoid atomic operation. 
+
+The proposed ACC framework is designed to address these three challenges. The new ACC model contains three functions: Active, Compute, and Combine. (1) Active allows a programmer to specify the condition of whether a vertex is active. (2) Compute defines the computation that happens on each edge. (3) Combine merges all the updates once the computations are completed. Further, we introduce Just-in-time workload management and push-and-pull-based kernel fusion to optimize the turnaround time for graph analytics. 
+				
+
+Pandey, Santosh, Zhibin Wang, Sheng Zhong, Chen Tian, Bolong Zheng, Xiaoye S. Li, Lingda Li, Adolfy Hoisie,Caiwen Ding, Dong Li, and Hang Liu, 2021. Trust: Triangle counting reloaded on GPUs. IEEE Transactions on Parallel and Distributed Systems, 32(11), pp.2646-2660.
+
+Santosh Pandey is my student. Hang Liu is the corresponding author. 
+
+This paper could serve as the ultimate conclusion for the triangle counting problem. Basically, no matter how large the graph is, this paper could solve it! Of note, my group has won the championship of the triangle counting-based graph challenge (hosted by MIT, AWS, and DARPA) twice!
+
+We introduce a graph and workload collaborative partitioning approach to ultimately scale triangle counting to any number of machines or GPUs without the need for communications  (which is shown in Figure 9 of this paper). 
+
+We first use a 2-D partition to partition the graph into 2-D grids. Subsequently, we use vertex-centric triangle counting. For each vertex, we get its one-hop neighbor partition (where we have three of them). We first review what information is needed in vertex-centric hashing-based triangle counting on a single GPU. Particularly, we need three neighborList: (i) u’s 1-hop neighborList to construct hashTable. (ii) u’s 2-hop neighbor list. (iii) u’s 1-hop neighborList as sources to fetch the 2-hop neighborList of the bullet (ii). 
+
+Our solutions are as follows: (1) We choose one partition to build the hashTable. (2) In order to extract a triangle, we only need the vertex range of the hashTable to overlap that of the 2-hop neighbor. This helps reduce the number of fetched 2-hop neighbor partitions tremendously. We need to find all such partitions. (3) We further need to fetch the 1-hop neighbor partitions that are used to index the 2-hop neighbor list. The key is that u’s 1-hop neighbors used to construct the hashTable and the 1-hop neighbors used to index the 2-hop neighbors can be different. This again helps us reduce the required partitions dramatically. Finally, each partition in the graph can be partitioned arbitrarily small, and each worker only needs three partitions to do the triangle counting. That essentially means - we can do triangle counting for arbitrarily large graphs.
