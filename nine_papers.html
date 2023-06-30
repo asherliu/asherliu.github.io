@@ -1,4 +1,64 @@
-<p></p><h2 id="recent-publications">Details on 9 papers for tenure promotion - Hang Liu</h2></p>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Hang Liu @ Stevens Institute of Technology 
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/poole.css">
+  <link rel="stylesheet" href="assets/css/syntax.css">
+  <link rel="stylesheet" href="assets/css/hyde.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+</head>
+
+  <body class="theme-base-10">
+        <div class="sidebar">
+            <div class="container sidebar-sticky">
+                <div class="sidebar-about">
+                    <h1 class="name">Hang Liu</h1>
+                    <a href="https://personal.stevens.edu/~hliu77"><img height="180px" src="images/hangliu.jpg" alt="Hang Liu"></a>
+                    <p class="social">
+                    <span class="lead">Assistant Professor of <a href="https://www.stevens.edu/schaefer-school-engineering-science/departments/electrical-computer-engineering">Electrical and Computer Engineering</a> at <a href="https://www.stevens.edu/">Stevens Institute of Technology</a></span><br>
+                    </p>
+                </div>
+                <nav class="sidebar-nav">
+                    <a class="sidebar-nav-item" href="index.html">Home</a>
+
+
+                    <a class="sidebar-nav-item" href="full_pub.html">Publications</a>
+                    <a class="sidebar-nav-item" href="teaching.html">Teaching</a>
+                    <a class="sidebar-nav-item" href="https://github.com/asherliu/researchHOWTO">Research advice</a>
+
+                    <p><strong>Ongoing projects:</strong>
+                    <ul>
+                        <li><a class="sidebar-nav-item" href="subgraph_matching.html">Subgraph matching</a></li>
+                        <li><a class="sidebar-nav-item" href="lu_factorization.html">LU factorization</a></li>
+                        <li><a class="sidebar-nav-item" href="#">Hardware accelerated deep learning [To come]</a></li>
+                        <!-- li><a class="sidebar-nav-item" href="#">5G calibration [To come]</a></li-->
+                    </ul>
+                    </p>
+                    <p><strong>Email: Hang.Liu@rutgers.edu</strong></p>
+
+                </nav>
+            </div>
+        </div>
+
+    <div class="content container">
+
+	    <h2 id="recent-publications">Details on 9 papers for tenure promotion - Hang Liu</h2>
 
 <p>They are not (necessarily) my highest-cited work, given that several of them were just published recently. However, they collectively demonstrate the depth and breadth of my research portfolio. And I personally think these papers are interesting.</p>
 
@@ -104,3 +164,7 @@
 <p>We first use a 2-D partition to partition the graph into 2-D grids. Subsequently, we use vertex-centric triangle counting. For each vertex, we get its one-hop neighbor partition (where we have three of them). We first review what information is needed in vertex-centric hashing-based triangle counting on a single GPU. Particularly, we need three neighborList: (i) u’s 1-hop neighborList to construct hashTable. (ii) u’s 2-hop neighbor list. (iii) u’s 1-hop neighborList as sources to fetch the 2-hop neighborList of the bullet (ii). </p>
 
 <p>Our solutions are as follows: (1) We choose one partition to build the hashTable. (2) In order to extract a triangle, we only need the vertex range of the hashTable to overlap that of the 2-hop neighbor. This helps reduce the number of fetched 2-hop neighbor partitions tremendously. We need to find all such partitions. (3) We further need to fetch the 1-hop neighbor partitions that are used to index the 2-hop neighbor list. The key is that u’s 1-hop neighbors used to construct the hashTable and the 1-hop neighbors used to index the 2-hop neighbors can be different. This again helps us reduce the required partitions dramatically. Finally, each partition in the graph can be partitioned arbitrarily small, and each worker only needs three partitions to do the triangle counting. That essentially means - we can do triangle counting for arbitrarily large graphs.</p>
+    
+    </div>
+  </body>
+</html>
