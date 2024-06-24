@@ -64,7 +64,7 @@
 
 <p>I will explain all the papers in three stages: Identifying the critical applications, introducing key algorithmic innovations, and designing and implementing systems. Of note, identifying a critical problem that is interesting, challenging, and can eventually be solved by a student is sometimes even more important than the subsequent papers. </p>
 
-<b style="color:blue">Pandey, Santosh, Lingda Li, Adolfy Hoisie, Xiaoye S. Li, and Hang Liu*. "C-SAW: A framework for graph sampling and random walk on GPUs." In SC20: International Conference for High Performance Computing, Networking, Storage and Analysis, pp. 1-15. IEEE, 2020.</b>
+<b style="color:blue"><u>Paper 1:</u> Pandey, Santosh, Lingda Li, Adolfy Hoisie, Xiaoye S. Li, and Hang Liu*. "C-SAW: A framework for graph sampling and random walk on GPUs." In SC20: International Conference for High Performance Computing, Networking, Storage and Analysis, pp. 1-15. IEEE, 2020.</b>
 <p><a href="docs/sc20.pdf">Link to paper</a></p>
 
 <p>Hang Liu is the corresponding author. My student Santosh Pandey is the first author.</p>
@@ -81,8 +81,8 @@
 
 <p>We have released this code on GitHub and it has been starred and forked 40 times. The citation is 52 since publication in 2020.</p>
 
-<b style="color:blue">Pandey, Santosh, Yazdanbakhsh, Amir, and Liu, Hang. "Tao: Re-Thinking DL-based Microarchitecture Simulation." SIGMETRICS (2024).</b>
-<p><a href="docs/eurosys23.pdf">Link to paper</a></p>
+<b style="color:blue"><u>Paper 2:</u> Pandey, Santosh, Yazdanbakhsh, Amir, and Liu, Hang. "Tao: Re-Thinking DL-based Microarchitecture Simulation." SIGMETRICS (2024).</b>
+<p><a href="docs/sigmetrics24.pdf">Link to paper</a></p>
 	    
 <p>Santosh Pandey is my student. Hang Liu is the corresponding author. I developed the ideas with Santosh Pandey. I wrote the entire paper. </p>
 
@@ -92,7 +92,7 @@
 
 <p>Towards the practicability, Tao features the following design contributions: First, we propose a new training dataset design such that the subsequent simulation (i.e., inference) only needs functional traces as inputs, which can be rapidly generated and reused across microarchitectures. Second, to increase the detail of the simulation, we redesign the input features and the DL model using self-attention to support predicting various performance metrics of interest. Third, we propose techniques to train a microarchitecture agnostic embedding layer that enables fast transfer learning between different microarchitectural configurations and effectively reduces the re-training overhead of conventional DL-based simulators. Tao can predict various performance metrics of interest, significantly reduce the simulation time, and maintain similar simulation accuracy as state-of-the-art DL-based endeavors. Our extensive evaluation shows Tao can reduce the overall training and simulation time by 18.06× over the state-of-the-art DL-based endeavors.</p>
 	    
-<b style="color:blue">Huan, Chengying, Shuaiwen Leon Song, Santosh Pandey, Hang Liu, Yongchao Liu, Baptiste Lepers, Changhua He, Kang Chen, Jinlei Jiang, and Yongwei Wu. "TEA: A General-Purpose Temporal Graph Random Walk Engine." Eurosys (2023).</b>
+<b style="color:blue"><u>Paper 3:</u> Huan, Chengying, Shuaiwen Leon Song, Santosh Pandey, Hang Liu, Yongchao Liu, Baptiste Lepers, Changhua He, Kang Chen, Jinlei Jiang, and Yongwei Wu. "TEA: A General-Purpose Temporal Graph Random Walk Engine." Eurosys (2023).</b>
 <p><a href="docs/eurosys23.pdf">Link to paper</a></p>
 	    
 <p>Santosh Pandey is my student. Hang Liu and Yongwei Wu are co-corresponding authors. I developed the ideas with Chengying Huan and Santosh Pandey. I wrote the entire paper. </p>
@@ -104,7 +104,7 @@
 <p>TEA introduces the persistent alias table approach, which pre-builds the log(N) a number of alias tables and uses them to formulate required alias tables of any time t. During sampling, we use ITS and the alias method together to derive the edge of interest rapidly. Further, we introduce a hierarchical persistent alias table to take advantage of fast memory hierarchies. We also introduce an auxiliary index to assist rapid alias table construction. Finally, we implement this method on distributed and external memory settings and demonstrate superior performance. And this trend climbs when the graph increases. </p>
 
 
-<b style="color:blue">Chen, Shiyang, Da Zheng, Caiwen Ding, Yuede Ji, Chengying Huan, and Hang Liu. "Tango: re-thinking quantization for graph neural network training on GPUs." In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis, pp. 1-18. 2023.</b>
+<b style="color:blue"><u>Paper 4:</u> Chen, Shiyang, Da Zheng, Caiwen Ding, Yuede Ji, Chengying Huan, and Hang Liu. "Tango: re-thinking quantization for graph neural network training on GPUs." In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis, pp. 1-18. 2023.</b>
 <p><a href="docs/sc23.pdf">Link to paper</a></p>	    
 
 <p>Shiyang is my student. Hang Liu is the corresponding author.
@@ -116,7 +116,7 @@
 <p>For accuracy concerns, Tango introduces a rule that determines what tensor operations can be performed in limited precision and leave the remaining ones in full precision. We also introduce an approach to deriving the appropriate quantization bits with limited overhead. We made sure that the quantized kernels could yield the maximal turnaround time reductions. For turnaround time reduction, quantization offers two avenues: (1) for computation-intensive operations like GEMM, we introduce GEMM computation with on-the-fly quantization. We carefully design a pipelined GPU kernel that can reach a similar performance as cuBLAS. Further, with quantization, we can achieve around 3x speedup. (2) For memory-intensive operations, such as SPMM and SDDMM, we introduce an on-the-fly dequantization design. That is, we quantize the tensors in a sequential manner. Afterward, the computations, which randomly access the tensors and require the tensors to be full precision, we randomly access the quantized smaller tensor and on-the-fly dequantize them for computations. This yields up to 5.5x speedup.</p>
 
 
-<b style="color:blue">Chen, Shiyang, Shaoyi Huang, Santosh Pandey, Bingbing Li, Guang R. Gao, Long Zheng, Caiwen Ding, and Hang Liu. "E.T.: re-thinking self-attention for transformer models on GPUs." In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis, pp. 1-18. 2021.</b>
+<b style="color:blue"><u>Paper 5:</u> Chen, Shiyang, Shaoyi Huang, Santosh Pandey, Bingbing Li, Guang R. Gao, Long Zheng, Caiwen Ding, and Hang Liu. "E.T.: re-thinking self-attention for transformer models on GPUs." In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis, pp. 1-18. 2021.</b>
 <p><a href="docs/sc21a.pdf">Link to paper</a></p>
 	    
 <p>Shiyang is my student. Hang Liu is the corresponding author. 
@@ -127,7 +127,7 @@
 
 <p>This paper introduces three contributions to reducing the turnaround time for transformer models: (1) First, we introduce a novel self-attention architecture, which encompasses two tailored self-attention operators with corresponding sequence length-aware optimizations and operation reordering optimizations. (2) We propose an attention-aware and tensor core-friendly pruning design which judiciously uses various pruning algorithms to reduce more computations hence achieving a significantly shorter turnaround time. (3) We demonstrate the effectiveness of E.T. across a wide range of benchmarks and models. To the best of our knowledge, E.T. is the first work that achieves as short inference latencies as 1,131 𝜇𝑠 (BERT BASE) and 500 𝜇𝑠 (DistilBERT) on GPUs while maintaining high prediction accuracy. </p>
 
-<b style="color:blue">Gaihre, Anil, Da Zheng, Scott Weitze, Lingda Li, Shuaiwen Leon Song, Caiwen Ding, Xiaoye S. Li, and Hang Liu. "Dr. Top-k: delegate-centric Top-k on GPUs." In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis, pp. 1-14. 2021.</b>
+<b style="color:blue"><u>Paper 6:</u> Gaihre, Anil, Da Zheng, Scott Weitze, Lingda Li, Shuaiwen Leon Song, Caiwen Ding, Xiaoye S. Li, and Hang Liu. "Dr. Top-k: delegate-centric Top-k on GPUs." In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis, pp. 1-14. 2021.</b>
 <p><a href="docs/sc21b.pdf">Link to paper</a></p>
 	    
 <p>Anil is my student. Hang Liu is the corresponding author.</p>
@@ -138,7 +138,7 @@
 					
 <p>Dr. top-k introduces a comprehensive delegate-centric design, which includes maximum delegate, top-𝑘 delegate-based filtering, and 𝛽 delegate mechanisms to help reduce the workload for top-𝑘 up to more than 99%. Specifically, we (i) partition the input vector into a collection of subranges and extract the maximum delegate from each subrange to construct a delegate vector, and (ii) perform top-𝑘 on the delegate vector. Since only those subranges whose maximum delegates belong to the top-𝑘 of the delegate vector can contribute to the top-𝑘 for the input vector, we further (iii) concatenate those qualified subranges to construct a concatenated vector, and (iv) perform top-𝑘 on the concatenated vector. To further reduce the workload for step (iv), we use the minimum of the top-𝑘 of the delegate vector to filter out smaller elements from the qualified subranges. Not limited there, we extend the maximum delegate to 𝛽 delegate to reduce the workload for concatenation and second top-𝑘. In particular, we will extract the top 𝛽 delegates, instead of merely the maximum, from each subrange. Afterward, we introduce a new rule using which we only concatenate subranges whose entire 𝛽 delegates are taken. Further, we deduce the optimal subrange size with both theoreti- cal soundness and experimental validation. We observe that Dr. top-k can be orders of magnitude faster than existing solutions. </p>
 				
-<b style="color:blue">Pandey, Santosh, Lingda Li, Thomas Flynn, Adolfy Hoisie, and Hang Liu. "Scalable deep learning-based microarchitecture simulation on GPUs." In 2022 SC22: International Conference for High Performance Computing, Networking, Storage and Analysis (SC), pp. 1138-1152. IEEE Computer Society, 2022.</b>
+<b style="color:blue"><u>Paper 7:</u> Pandey, Santosh, Lingda Li, Thomas Flynn, Adolfy Hoisie, and Hang Liu. "Scalable deep learning-based microarchitecture simulation on GPUs." In 2022 SC22: International Conference for High Performance Computing, Networking, Storage and Analysis (SC), pp. 1138-1152. IEEE Computer Society, 2022.</b>
 <p><a href="docs/sc22.pdf">Link to paper</a></p>
 	    
 <p>Santosh is my student. Hang Liu is the corresponding author. </p>
@@ -149,15 +149,16 @@
 
 <p>The contributions of this paper are as follows: (1) We find the native SimNet design contains four redundant data copies in order to build the relational CNN inputs. And we remove all such redundancies! (2) Based on the physical limitations of the given contexts, we partition the instruction sequence into parallel chunks. Subsequently, we use warming up and post-error correction to nearly remove the errors caused by partitioning the instructions. These two contributions together enable a scalable deep learning-based detailed simulation. (3) We also extend this idea to Ithemal [ICML ‘19] and make that simulator scalable.</p>
 
-<b style="color:blue">Gaihre, Anil, Zhenlin Wu, Fan Yao, and Hang Liu. "XBFS: eXploring runtime optimizations for breadth-first search on GPUs." In Proceedings of the 28th International symposium on high-performance parallel and distributed computing, pp. 121-131. 2019.</b>
-
+<b style="color:blue"><u>Paper 8:</u> Gaihre, Anil, Zhenlin Wu, Fan Yao, and Hang Liu. "XBFS: eXploring runtime optimizations for breadth-first search on GPUs." In Proceedings of the 28th International symposium on high-performance parallel and distributed computing, pp. 121-131. 2019.</b>
+<p><a href="docs/hpdc19.pdf">Link to paper</a></p>
+	    
 <p>Anil and Zhenlin are my students. Hang Liu is the corresponding author. </p>
 
 <p>This is the first truly asynchronous breadth-first search paper. Specifically, in bottom-up BFS, which consumes the majority of the time in BFS, XBFS can traverse multiple BFS levels in one iteration. In bottom-up BFS, each unvisited vertex will check its neighbors to see if any of its neighbors are already visited in the preceding level. If so, this vertex will mark itself as visited at the current level. We push this algorithm further as follows: we let each unvisited check its neighbors, and as long as it has a neighbor visited (regardless of the preceding or current, or next level), we will mark this unvisited vertex as visited. And its level will be the visited neighbor's level + 1. This allows us to visit vertices of multiple levels in a single round. </p>
 
 <p>The second interesting observation is that: recent GPUs are better and better at atomic operations. Therefore, we introduce dynamic strategies to generate frontier queues and balance the workload. These approaches are much better than the prior static ones. </p>
 
-<b style="color:blue">Liu, Hang, and H. Howie Huang. "Simd-x: Programming and processing of graph algorithms on GPUs." In Proceedings of the 2019 USENIX Conference on Usenix Annual Technical Conference. 2019.</b>
+<b style="color:blue"><u>Paper 9:</u> Liu, Hang, and H. Howie Huang. "Simd-x: Programming and processing of graph algorithms on GPUs." In Proceedings of the 2019 USENIX Conference on Usenix Annual Technical Conference. 2019.</b>
 <p><a href="docs/usenix-atc19.pdf">Link to paper</a></p>
 	    
 <p>This paper is the concluding work for most of my philosophical thoughts in GPU-accelerated traditional graph analytics.  </p>
@@ -171,7 +172,7 @@
 <p>The proposed ACC framework is designed to address these three challenges. The new ACC model contains three functions: Active, Compute, and Combine. (1) Active allows a programmer to specify the condition of whether a vertex is active. (2) Compute defines the computation that happens on each edge. (3) Combine merges all the updates once the computations are completed. Further, we introduce Just-in-time workload management and push-and-pull-based kernel fusion to optimize the turnaround time for graph analytics. </p>
 				
 
-<b style="color:blue">Pandey, Santosh, Zhibin Wang, Sheng Zhong, Chen Tian, Bolong Zheng, Xiaoye S. Li, Lingda Li, Adolfy Hoisie,Caiwen Ding, Dong Li, and Hang Liu, 2021. Trust: Triangle counting reloaded on GPUs. IEEE Transactions on Parallel and Distributed Systems, 32(11), pp.2646-2660.</b>
+<b style="color:blue"><u>Paper 10:</u> Pandey, Santosh, Zhibin Wang, Sheng Zhong, Chen Tian, Bolong Zheng, Xiaoye S. Li, Lingda Li, Adolfy Hoisie,Caiwen Ding, Dong Li, and Hang Liu, 2021. Trust: Triangle counting reloaded on GPUs. IEEE Transactions on Parallel and Distributed Systems, 32(11), pp.2646-2660.</b>
 <p><a href="docs/tpds21.pdf">Link to paper</a></p>
 	    
 <p>Santosh Pandey is my student. Hang Liu is the corresponding author. </p>
