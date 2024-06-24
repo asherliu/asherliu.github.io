@@ -65,7 +65,7 @@
 <p>I will explain all the papers in three stages: Identifying the critical applications, introducing key algorithmic innovations, and designing and implementing systems. Of note, identifying a critical problem that is interesting, challenging, and can eventually be solved by a student is sometimes even more important than the subsequent papers. </p>
 
 <b style="color:blue">Pandey, Santosh, Lingda Li, Adolfy Hoisie, Xiaoye S. Li, and Hang Liu*. "C-SAW: A framework for graph sampling and random walk on GPUs." In SC20: International Conference for High Performance Computing, Networking, Storage and Analysis, pp. 1-15. IEEE, 2020.</b>
-<p><a href="https://asherliu.github.io/docs/SC20.pdf">Link</a></p>
+<p><a href="docs/sc20.pdf">Link</a></p>
 
 <p>Hang Liu is the corresponding author. My student Santosh Pandey is the first author.</p>
 
@@ -73,11 +73,11 @@
 
 <p>We started this project with a focus on accelerating GNNs in the summer of 2019 at Lawrence Berkeley National Laboratory in part because graph learning was extremely popular. However, we find scaling GNNs to HPC infrastructure for large graphs would spend more than 80% of the time on sampling graphs. </p>
 
-<p>I made a conscious decision to change our target to accelerate the sampling method that is used by GNNs. Further, we decided to develop a MapReduce-style system that can support all graph algorithms that requires sampling. And we found more than 10 applications for graph sampling and random walks. All of them use Monte Carlo sampling methods which contain 3 algorithms.</p>
+<p>I made a conscious decision to change our target to accelerate the sampling method that is used by GNNs. Further, we decided to develop a MapReduce-style system that can support all graph algorithms that require sampling. And we found more than 10 applications for graph sampling and random walks. All of them use Monte Carlo sampling methods which contain 3 algorithms.</p>
 
 <p>As the first work for this effort, we spent almost half of the introduction justifying the necessity of this framework: (1) First, although there is a variety of frameworks to accelerate traditional graph processing algorithms on GPUs, graph sampling and random walk pose unique challenges thus cannot use existing graph frameworks. (2) it is difficult to arrive at a GPU-based framework for various graph sampling and random walk algorithms that address the needs of vastly different applications. And (3) an extremely large graph, which drives the needs of graph sampling and random walk, usually goes beyond the size of GPU memory.</p>
 
-<p>In this work, we propose (1) a bias-centric framework that allows end users to express a large family of sampling and random walk algorithms with ease. (2) We implement efficient GPU sampling with novel techniques. Our techniques parallelize the vertex selection on GPUs with efficient algorithm and system optimizations for vertex collision migration. (3) We propose asynchronous designs for sampling and random walk, which optimizes the data transfer efficiency for graphs that exceed the GPU memory capacity. We further scale C-SAW to multiple GPUs. </p>
+<p>In this work, we propose (1) a bias-centric framework that allows end users to express a large family of sampling and random walk algorithms with ease. (2) We implement efficient GPU sampling with novel techniques. Our techniques parallelize the vertex selection on GPUs with efficient algorithms and system optimizations for vertex collision migration. (3) We propose asynchronous designs for sampling and random walk, which optimizes the data transfer efficiency for graphs that exceed the GPU memory capacity. We further scale C-SAW to multiple GPUs. </p>
 
 <p>We have released this code on GitHub and it is starred and forked by 40 times. The citation is 31 since publication in 2020.</p>
 
